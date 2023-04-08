@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\KurirController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TransaksiController;
@@ -41,4 +43,20 @@ Route::get('/pesanan/index', [PesananController::class, 'index'])->name('pesanan
 
 //ini tabel laporan
 Route::get('/laporan/index', [LaporanController::class, 'index'])->name('laporan-index');
+
+//ini tabel pelanggan
+Route::get('/pelanggan/create', [PelangganController::class, 'create'])->name('pelanggan-create');
+Route::post('pelanggan/toko',[PelangganController::class,'store'])->name(('pelanggan-toko-store'));
+Route::delete('pelanggan/delete/{id}', [PelangganController::class, 'destroy'])->name('pelanggan-delete');
+Route::get('/pelanggan/edit/{id}', [PelangganController::class, 'edit'])->name('pelanggan-edit');
+Route::put('/pelanggan/update/{id}', [PelangganController::class, 'update'])->name('pelanggan-update');
+Route::get('/pelanggan/index', [PelangganController::class, 'index'])->name('pelanggan-index');
+
+//ini tabel kurir
+Route::get('/kurir/create', [KurirController::class, 'create'])->name('kurir-create');
+Route::post('kurir/toko',[KurirController::class,'store'])->name(('kurir-toko-store'));
+Route::delete('kurir/delete/{id}', [KurirController::class, 'destroy'])->name('kurir-delete');
+Route::get('/kurir/edit/{id}', [KurirController::class, 'edit'])->name('kurir-edit');
+Route::put('/kurir/update/{id}', [KurirController::class, 'update'])->name('kurir-update');
+Route::get('/kurir/index', [KurirController::class, 'index'])->name('kurir-index');
 

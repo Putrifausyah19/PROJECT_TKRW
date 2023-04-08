@@ -17,7 +17,7 @@
       
     </div>
     <div class="form-group">
-        <select class="form-control" name="kode_produk">
+        <select class="form-control" name="produk_id">
             <option label="Pilih produk"></option>
             @foreach ($produk as $item)
             <option value="{{ $item->id }}">{{ $item->nama }}</option>                
