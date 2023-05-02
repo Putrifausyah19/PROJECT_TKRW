@@ -10,14 +10,17 @@ class pesanan extends Model
     use HasFactory;
     protected $fillable = [
         'kode_pesanan',
-        'nama_pelanggan',
-        'qty',
         'status_pembayaran',
         'status_pesanan',
-        'produk_id',
+        'transaksi_id',
+        'kurir_id',
     ];
 
-    public function produk(){
-        return $this->belongsTo(Produk::class);
+    public function transaksi(){
+        return $this->belongsTo(transaksi::class);
+    }
+
+    public function kurir(){
+        return $this->belongsTo(Kurir::class);
     }
 }

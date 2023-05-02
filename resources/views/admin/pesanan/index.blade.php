@@ -9,9 +9,8 @@
       <tr>
         <th scope="col">NO</th>
         <th scope="col">KODE PESANAN</th>
-        <th scope="col">KODE PRODUK</th>
-        <th scope="col">NAMA PELANGGAN</th>
-        <th scope="col">JUMLAH PESANAN</th>
+        <th scope="col">KODE TRANSAKSI</th>
+        <th scope="col">KODE KURIR</th>
         <th scope="col">STATUS PEMBAYARAN</th>
         <th scope="col">STATUS PESANAN</th>
         <th scope="col">AKSI</th>
@@ -22,9 +21,8 @@
       <tr>
           <th scope="row">{{ $key + 1}}</th>
           <td>{{ $item->kode_pesanan }}</td>
-          <td>{{ $item->produk->kode_produk}}</td>
-          <td>{{ $item->nama_pelanggan }}</td>
-          <td>{{ $item->qty }}</td>
+          <td>{{ $item->transaksi->kode_transaksi}}</td>
+          <td>{{ $item->kurir->kode_kurir}}</td>
           <td>{{ $item->status_pembayaran }}</td>
           <td>{{ $item->status_pesanan }}</td>
   

@@ -12,23 +12,24 @@
     </div>
 
     <div class="form-group">
-      <label>Nama Pelanggan</label>
-      <input name="nama_pelanggan"  class="form-control">
-      
-    </div>
-    <div class="form-group">
-        <select class="form-control" name="produk_id">
-            <option label="Pilih produk"></option>
-            @foreach ($produk as $item)
+        <select class="form-control" name="transaksi_id">
+            <option label="Pilih Transaksi"></option>
+            @foreach ($transaksi as $item)
             <option value="{{ $item->id }}">{{ $item->nama }}</option>                
             @endforeach
         </select>  
       </div>
-    <div class="form-group">
-      <label>Qty</label>
-      <input name="qty"  class="form-control">
-      
-    </div>
+
+      <div class="form-group">
+        <select class="form-control" name="kurir_id">
+            <option label="Pilih kurir"></option>
+            @foreach ($kurir as $item)
+            <option value="{{ $item->id }}">{{ $item->nama }}</option>                
+            @endforeach
+        </select>  
+      </div>
+
+  
     <div class="form-group">
       <label>Status Pembayaran</label>
       <input name="status_pembayaran" class="form-control">

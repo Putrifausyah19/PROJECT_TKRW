@@ -41,24 +41,24 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
-            <span>User</span>
+            <span>Info</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">User</h6>
-                <a class="collapse-item" href="{{ route('pelanggan-index')}}">Pelanggan</a>
+                <h6 class="collapse-header">Info</h6>
+                {{-- <a class="collapse-item" href="{{ route('pelanggan-index')}}">Pelanggan</a> --}}
                 <a class="collapse-item" href="{{ route('kurir-index')}}">Kurir</a>
             </div>
         </div>
     </li>
 
      <!-- Nav Item - Dashboard -->
-     <li class="nav-item">
+     {{-- <li class="nav-item">
         <a class="nav-link" href="{{ route('laporan-index')}}">
             
             <span>Laporan</span></a>
-    </li>
+    </li> --}}
 
  
     <!-- Divider -->

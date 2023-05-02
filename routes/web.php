@@ -6,6 +6,7 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TransaksiController;
+use App\Models\transaksi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,8 +31,6 @@ Route::get('/produk/edit/{id}', [ProdukController::class, 'edit'])->name('produk
 Route::put('/produk/update/{id}', [ProdukController::class, 'update'])->name('produk-update');
 Route::get('/produk/index', [ProdukController::class, 'index'])->name('produk-index');
 
-//ini tabel transaksi
-Route::get('/transaksi/index', [TransaksiController::class, 'index'])->name('transaksi-index');
 
 //ini tabel pesanan
 Route::get('/pesanan/create', [PesananController::class, 'create'])->name('pesanan-create');
@@ -59,4 +58,13 @@ Route::delete('kurir/delete/{id}', [KurirController::class, 'destroy'])->name('k
 Route::get('/kurir/edit/{id}', [KurirController::class, 'edit'])->name('kurir-edit');
 Route::put('/kurir/update/{id}', [KurirController::class, 'update'])->name('kurir-update');
 Route::get('/kurir/index', [KurirController::class, 'index'])->name('kurir-index');
+
+//ini tabel transaksi
+Route::get('/transaksi/create', [TransaksiController::class, 'create'])->name('transaksi-create');
+Route::post('transaksi/toko',[TransaksiController::class,'store'])->name(('transaksi-toko-store'));
+Route::get('/transaksi/index', [TransaksiController::class, 'index'])->name('transaksi-index');
+Route::get('/transaksi/edit/{id}', [TransaksiController::class, 'edit'])->name('transaksi-edit');
+Route::put('/transaksi/update/{id}', [TransaksiController::class, 'update'])->name('transaksi-update');
+Route::delete('transaksi/delete/{id}', [TransaksiController::class, 'destroy'])->name('transaksi-delete');
+
 

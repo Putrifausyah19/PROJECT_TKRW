@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kurir;
 use App\Models\pesanan;
 use App\Models\Produk;
+use App\Models\transaksi;
 use Illuminate\Http\Request;
 
 class PesananController extends Controller
 {
     public function index(){
-        $pesanan = pesanan::with("produk")->paginate(5);
+        $pesanan = pesanan::with("transaksi","kurir")->paginate(5);
         return view('admin.pesanan.index', compact("pesanan"));
     }
 
     public function create(){
-        $produk = Produk::all();
+        $transaksi = transaksi::all();
+        $kurir = Kurir::all();
 
-        return view('admin.pesanan.create', compact("produk"));
+        return view('admin.pesanan.create', compact("transaksi", "kurir"));
     }
     public function store(Request $request){
         pesanan::create($request->all());
@@ -32,8 +35,9 @@ class PesananController extends Controller
     }
     public function edit($id){
         $pesanans = pesanan::where("id", $id)->first();
-        $produk = Produk::all();
-        return view("admin.pesanan.edit", compact("pesanans","produk"));
+        $transaksi = transaksi::all();
+        $kurir = Kurir::all();
+        return view("admin.pesanan.edit", compact("pesanans","transaksi","kurir"));
     }
 
     public function update(Request $request, $id){
