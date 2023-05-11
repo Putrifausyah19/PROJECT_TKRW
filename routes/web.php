@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('backend.master');
+    return view('auth.login');
 });
 //ini tabel produk
 Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk-create');
@@ -68,3 +68,7 @@ Route::put('/transaksi/update/{id}', [TransaksiController::class, 'update'])->na
 Route::delete('transaksi/delete/{id}', [TransaksiController::class, 'destroy'])->name('transaksi-delete');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

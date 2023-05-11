@@ -11,15 +11,15 @@ use Illuminate\Http\Request;
 class PesananController extends Controller
 {
     public function index(){
-        $pesanan = pesanan::with("transaksi","kurir")->paginate(5);
-        return view('admin.pesanan.index', compact("pesanan"));
+        $pesanan = pesanan::with('transaksi','kurir')->paginate(5);
+        return view('admin.pesanan.index', compact('pesanan'));
     }
 
     public function create(){
         $transaksi = transaksi::all();
         $kurir = Kurir::all();
 
-        return view('admin.pesanan.create', compact("transaksi", "kurir"));
+        return view('admin.pesanan.create', compact('transaksi', 'kurir'));
     }
     public function store(Request $request){
         pesanan::create($request->all());
@@ -28,22 +28,22 @@ class PesananController extends Controller
         //return redirect()->route('');
     }
     public function destroy($id){
-        $pesanans = pesanan::where("id", $id)->first();
-        $pesanans->delete();
+        $pesanan = pesanan::where("id", $id)->first();
+        $pesanan->delete();
 
-        return redirect()->route("pesanan-index");
+        return redirect()->route('pesanan-index');
     }
     public function edit($id){
-        $pesanans = pesanan::where("id", $id)->first();
+        $pesanan = pesanan::where("id", $id)->first();
         $transaksi = transaksi::all();
         $kurir = Kurir::all();
-        return view("admin.pesanan.edit", compact("pesanans","transaksi","kurir"));
+        return view('admin.pesanan.edit', compact('pesanan','transaksi','kurir'));
     }
 
     public function update(Request $request, $id){
-        $pesanans = pesanan::where("id", $id)->first();
-        $pesanans->update($request->all());
+        $pesanan = pesanan::where("id", $id)->first();
+        $pesanan->update($request->all());
 
-        return redirect()->route("pesanan-index");
+        return redirect()->route('pesanan-index');
     }
 }

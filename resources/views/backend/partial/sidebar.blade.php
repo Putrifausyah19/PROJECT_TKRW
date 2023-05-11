@@ -23,20 +23,27 @@
     <hr class="sidebar-divider d-none d-md-block">
   
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <span>Data</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Data</h6>
-                <a class="collapse-item" href="{{ route('produk-index')}}">Produk</a>
-                <a class="collapse-item" href="{{ route('transaksi-index')}}">Transaksi</a>
-                <a class="collapse-item" href="{{ route('pesanan-index')}}">Pesanan</a>
-            </div>
-        </div>
+        <a class="nav-link" href="{{ route('produk-index')}}">
+            <span>Produk</span></a>
     </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('transaksi-index')}}">
+            <span>Transaksi</span></a>
+    </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('pesanan-index')}}">
+            <span>Pesanan</span></a>
+    </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"

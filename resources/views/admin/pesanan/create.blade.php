@@ -12,13 +12,13 @@
     </div>
 
     <div class="form-group">
-        <select class="form-control" name="transaksi_id">
-            <option label="Pilih Transaksi"></option>
-            @foreach ($transaksi as $item)
-            <option value="{{ $item->id }}">{{ $item->nama }}</option>                
-            @endforeach
-        </select>  
-      </div>
+      <select class="form-control" name="transaksi_id">
+          <option label="Pilih Transaksi"></option>
+          @foreach ($transaksi as $item)
+          <option value="{{ $item->id }}">{{ $item->nama }}</option>                
+          @endforeach
+      </select>  
+    </div>
 
       <div class="form-group">
         <select class="form-control" name="kurir_id">
